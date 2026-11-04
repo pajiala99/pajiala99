@@ -2,8 +2,6 @@
 
 I'm a Computer Engineering student at Thapar Institute of Engineering & Technology, Patiala (class of 2028). I build data engineering, ML and AI-agent projects.
 
-🏆 **[SafeTrail](https://github.com/pajiala99/BIOS-SafeTrail)**: problem statement winner at the BIOS V2 hackathon, built with [@gaurvit06](https://github.com/gaurvit06).
-
 ## Projects
 
 | Project | What it is |

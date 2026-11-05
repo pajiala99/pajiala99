@@ -64,11 +64,10 @@ Each card replays the idea its project is built around. Click a card to open the
 
 ## How an SOS survives no signal
 
-SafeTrail's SOS path, from the button to a resolved incident. Drag or zoom the diagram.
+SafeTrail's SOS path, from the button to a resolved incident. You can drag and zoom the diagram.
 
 ```mermaid
 stateDiagram-v2
-    direction LR
     state "Saved on phone" as Saved
     state "Send by SMS offered" as Sms
     state "Received by server" as Received
@@ -79,10 +78,10 @@ stateDiagram-v2
     state "Cancelled by tourist" as Cancelled
     [*] --> Saved: hold SOS for 1.5 s
     Saved --> Saved: no signal, retry with backoff
-    Saved --> Received: POST /sos, idempotent on client_id
+    Saved --> Received: sent (POST /sos is idempotent)
     Saved --> Sms: still unsent after 120 s
     Sms --> Received: coded SMS
-    Received --> Open: rules set priority, DBSCAN groups nearby SOS
+    Received --> Open: priority by rules, nearby SOS grouped
     Open --> Accepted: responder accepts
     Accepted --> EnRoute
     EnRoute --> Resolved

@@ -10,9 +10,9 @@
   .sub{font:400 13px 'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;fill:#8f97ad}
   .ln{font:500 14px 'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;fill:#ece8dd}
   .pct{fill:#8f97ad}
-  .tile,.leg{animation:rise .7s ease-out both}
+  .tile,.leg{animation:fade .7s ease-out both}
   .seg{transform-box:fill-box;transform-origin:left;animation:grow .9s cubic-bezier(.2,.8,.2,1) both}
-  @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1}}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
   @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
   @media (prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
@@ -20,7 +20,7 @@
 <rect x="0.5" y="0.5" width="1199" height="199" rx="18" fill="none" stroke="#2a3356"/>
 <text class="h" x="40" y="42">AT A GLANCE</text>
 <text class="h" x="580" y="42">LANGUAGES ACROSS MY REPOS</text>
-<g transform="translate(40 54)"><g class="tile" style="animation-delay:0.00s"><text class="big" y="44">108</text><text class="lab" y="72">contributions</text><text class="sub" y="92">in the last year</text></g></g><g transform="translate(210 54)"><g class="tile" style="animation-delay:0.12s"><text class="big" y="44">7</text><text class="lab" y="72">public projects</text><text class="sub" y="92">on this profile</text></g></g><g transform="translate(380 54)"><g class="tile" style="animation-delay:0.24s"><text class="big" y="44">3</text><text class="lab" y="72">hackathons</text><text class="sub" y="92">one problem statement won</text></g></g>
+<g transform="translate(40 54)"><g class="tile" style="animation-delay:0.00s"><text class="big" y="44">109</text><text class="lab" y="72">contributions</text><text class="sub" y="92">in the last year</text></g></g><g transform="translate(210 54)"><g class="tile" style="animation-delay:0.12s"><text class="big" y="44">7</text><text class="lab" y="72">public projects</text><text class="sub" y="92">on this profile</text></g></g><g transform="translate(380 54)"><g class="tile" style="animation-delay:0.24s"><text class="big" y="44">3</text><text class="lab" y="72">hackathons</text><text class="sub" y="92">one problem statement won</text></g></g>
 <rect x="580" y="74" width="580" height="14" rx="7" fill="#222b4a"/>
 <g clip-path="url(#barclip)"><rect class="seg" style="animation-delay:0.30s" x="580.0" y="74" width="250.5" height="14" fill="#3572A5"/><rect class="seg" style="animation-delay:0.38s" x="830.5" y="74" width="143.6" height="14" fill="#3178c6"/><rect class="seg" style="animation-delay:0.46s" x="974.1" y="74" width="68.0" height="14" fill="#b07219"/><rect class="seg" style="animation-delay:0.54s" x="1042.1" y="74" width="67.9" height="14" fill="#f1e05a"/><rect class="seg" style="animation-delay:0.62s" x="1110.0" y="74" width="39.4" height="14" fill="#e34c26"/><rect class="seg" style="animation-delay:0.70s" x="1149.4" y="74" width="5.8" height="14" fill="#663399"/></g>
 <g class="leg" style="animation-delay:0.50s"><circle cx="586" cy="116" r="6" fill="#3572A5"/><text class="ln" x="600" y="121">Python <tspan class="pct">43.2%</tspan></text></g><g class="leg" style="animation-delay:0.58s"><circle cx="782" cy="116" r="6" fill="#3178c6"/><text class="ln" x="796" y="121">TypeScript <tspan class="pct">24.8%</tspan></text></g><g class="leg" style="animation-delay:0.66s"><circle cx="978" cy="116" r="6" fill="#b07219"/><text class="ln" x="992" y="121">Java <tspan class="pct">11.7%</tspan></text></g><g class="leg" style="animation-delay:0.74s"><circle cx="586" cy="146" r="6" fill="#f1e05a"/><text class="ln" x="600" y="151">JavaScript <tspan class="pct">11.7%</tspan></text></g><g class="leg" style="animation-delay:0.82s"><circle cx="782" cy="146" r="6" fill="#e34c26"/><text class="ln" x="796" y="151">HTML <tspan class="pct">6.8%</tspan></text></g><g class="leg" style="animation-delay:0.90s"><circle cx="978" cy="146" r="6" fill="#663399"/><text class="ln" x="992" y="151">CSS <tspan class="pct">1.0%</tspan></text></g>

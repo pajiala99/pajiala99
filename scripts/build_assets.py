@@ -149,9 +149,9 @@ def stats_svg(t, s):
   .sub{{font:400 13px {SANS};fill:{t['muted']}}}
   .ln{{font:500 14px {SANS};fill:{t['text']}}}
   .pct{{fill:{t['muted']}}}
-  .tile,.leg{{animation:rise .7s ease-out both}}
+  .tile,.leg{{animation:fade .7s ease-out both}}
   .seg{{transform-box:fill-box;transform-origin:left;animation:grow .9s cubic-bezier(.2,.8,.2,1) both}}
-  @keyframes rise{{from{{opacity:0;transform:translateY(8px)}}to{{opacity:1}}}}
+  @keyframes fade{{from{{opacity:0}}to{{opacity:1}}}}
   @keyframes grow{{from{{transform:scaleX(0)}}to{{transform:scaleX(1)}}}}
   @media (prefers-reduced-motion:reduce){{*{{animation:none!important}}}}
 </style>

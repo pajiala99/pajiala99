@@ -27,6 +27,7 @@
 | **Education** | B.E. Computer Engineering, Thapar Institute of Engineering & Technology, 2024–2028 |
 | **Based in** | Patiala, India |
 | **Works on** | Backend APIs · data pipelines on Spark and Delta Lake · ML models · AI agents with guardrails |
+| **Try it live** | [Sign-language recognition](https://pajiala99.github.io/#demo-isl) and [cricket win probability](https://pajiala99.github.io/#demo-cricket): two of my models, running in your browser |
 | **Currently** | Open to software, data and ML internships |
 | **Reach me** | [Portfolio](https://pajiala99.github.io) · [LinkedIn](https://linkedin.com/in/hardik-pajiala) · [hardikpajiala@gmail.com](mailto:hardikpajiala@gmail.com) |
 
@@ -143,8 +144,9 @@ A memory and care companion for elders with dementia in North East India, built 
 - 🏗️ A bronze/silver/gold Delta Lake lakehouse built from 7,000+ nested JSON files in 180 s
 - 🔁 Exactly-once streaming ingestion and revision-safe MERGE upserts, guarded by 19 data-quality checks
 - 🎯 A Spark MLlib win-probability model: 0.777 AUC and 1.8 pp calibration error on unseen seasons, scored live
+- 🎚️ A what-if demo in your browser: set overs left, wickets in hand and runs needed to see the real-data model's own prediction
 
-`PySpark` `Delta Lake` `Structured Streaming` `Spark MLlib` `Airflow` · [**Repository →**](https://github.com/pajiala99/cricket-winprob-lakehouse)
+`PySpark` `Delta Lake` `Structured Streaming` `Spark MLlib` `Airflow` · [**Repository →**](https://github.com/pajiala99/cricket-winprob-lakehouse) · [**Live demo →**](https://pajiala99.github.io/#demo-cricket)
 
 </details>
 
@@ -165,8 +167,9 @@ A memory and care companion for elders with dementia in North East India, built 
 
 - ✋ A BiLSTM with attention on MediaPipe keypoints that recognises 61 signs live and speaks them
 - 🧪 Went beyond a saturated benchmark: 95.6% top-1 from just 5 examples per word
+- ▶️ Runs in your browser too: exported to ONNX, it picks the same word as the Python pipeline on 181 of 182 held-out clips
 
-`PyTorch` `MediaPipe` `BiLSTM` · [**Repository →**](https://github.com/pajiala99/isl-recognition)
+`PyTorch` `MediaPipe` `BiLSTM` `ONNX` · [**Repository →**](https://github.com/pajiala99/isl-recognition) · [**Live demo →**](https://pajiala99.github.io/#demo-isl)
 
 </details>
 

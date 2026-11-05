@@ -1,7 +1,7 @@
 <a href="https://pajiala99.github.io">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
-    <img alt="Hardik Pajiala: I build the whole system, from backend APIs and data pipelines to ML models, AI agents and apps" src="assets/header-light.svg" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg?v=3">
+    <img alt="Hardik Pajiala: I build the whole system, from backend APIs and data pipelines to ML models, AI agents and apps" src="assets/header-light.svg?v=3" width="100%">
   </picture>
 </a>
 
@@ -20,8 +20,8 @@
 </p>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg">
-  <img alt="At a glance: contributions in the last year, public projects, hackathons, and languages across my repos" src="assets/stats-light.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg?v=3">
+  <img alt="At a glance: contributions in the last year, public projects, hackathons, and languages across my repos" src="assets/stats-light.svg?v=3" width="100%">
 </picture>
 
 ## Hackathons
@@ -143,8 +143,8 @@ An AI agent that investigates job offers for recruitment scams.
 ## Activity
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pajiala99/pajiala99/output/snake-dark.svg">
-  <img alt="A snake eating my GitHub contribution graph" src="https://raw.githubusercontent.com/pajiala99/pajiala99/output/snake-light.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pajiala99/pajiala99/output/snake-dark.svg?v=3">
+  <img alt="A snake eating my GitHub contribution graph" src="https://raw.githubusercontent.com/pajiala99/pajiala99/output/snake-light.svg?v=3" width="100%">
 </picture>
 
 <sub>Batch Group Leader for a 300-student batch at Thapar · Saturnalia volunteer · off the keyboard: gym, running, music and anime. The images above refresh daily through a GitHub Action in this repo.</sub>

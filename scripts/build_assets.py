@@ -121,11 +121,13 @@ def stats_svg(t, s):
     tiles = [(str(s["contributions"]), "contributions", "in the last year"),
              (str(s["repos"]), "public projects", "on this profile"),
              (str(HACKATHONS), "hackathons", "one problem statement won")]
-    # Position lives on the outer <g>, animation on the inner one: a CSS transform
-    # animation replaces the SVG transform attribute in Safari, stacking every tile at 0,0.
+    # Tiles are placed with plain x/y, never a transform: in Safari a CSS animation
+    # can replace an SVG transform attribute and stack every tile at 0,0.
     tile_svg = "".join(
-        f'<g transform="translate({40 + i * 170} 54)"><g class="tile" style="animation-delay:{i * 0.12:.2f}s">'
-        f'<text class="big" y="44">{v}</text><text class="lab" y="72">{a}</text><text class="sub" y="92">{b}</text></g></g>'
+        f'<g class="tile" style="animation-delay:{i * 0.12:.2f}s">'
+        f'<text class="big" x="{40 + i * 170}" y="98">{v}</text>'
+        f'<text class="lab" x="{40 + i * 170}" y="126">{a}</text>'
+        f'<text class="sub" x="{40 + i * 170}" y="146">{b}</text></g>'
         for i, (v, a, b) in enumerate(tiles))
 
     bar_x, bar_w, x, segs, legend = 580, 580, 0.0, [], []

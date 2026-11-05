@@ -379,7 +379,7 @@ def cards(t):
                           body_safetrail(t), "saved offline, delivered on reconnect · no SOS step waits on the AI",
                           pill="1ST PLACE · BIOS 2026"),
         "cricket": card(t, "Cricket lakehouse", "Ball-by-ball JSON to gold tables, exactly once",
-                        body_cricket(t), "1,667,611 rows · 0 lost · 0 duplicate keys · 19/19 checks pass",
+                        body_cricket(t), "8,852 real matches · 2,026,949 balls · 19/19 checks pass",
                         tag="PySpark · Delta Lake"),
         "foodbridge": card(t, "FoodBridge", "Why the matcher solves the whole board at once", food,
                            f"same 4×4 scores: greedy {g:.2f} → Hungarian {h:.2f} (+{(h / g - 1) * 100:.0f}%)",

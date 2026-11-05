@@ -56,7 +56,7 @@ Each card replays the idea its project is built around. Click a card to open the
 
 <p align="center">
   <a href="https://github.com/pajiala99/BIOS-SafeTrail"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-safetrail-dark.svg?v=4"><img alt="SafeTrail: SOS calls are saved on the phone while there is no signal, then delivered to the responder when signal returns" src="assets/card-safetrail-light.svg?v=4" width="49%"></picture></a>
-  <a href="https://github.com/pajiala99/cricket-winprob-lakehouse"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-cricket-dark.svg?v=4"><img alt="Cricket lakehouse: rows flow from bronze to silver to gold, and a bad row is quarantined at the quality gate" src="assets/card-cricket-light.svg?v=4" width="49%"></picture></a>
+  <a href="https://github.com/pajiala99/cricket-winprob-lakehouse"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-cricket-dark.svg?v=5"><img alt="Cricket lakehouse: rows flow from bronze to silver to gold, and a bad row is quarantined at the quality gate" src="assets/card-cricket-light.svg?v=5" width="49%"></picture></a>
 </p>
 <p align="center">
   <a href="https://github.com/pajiala99/project_SE3"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-foodbridge-dark.svg?v=4"><img alt="FoodBridge: greedy matching scores 2.40 on a 4 by 4 example, and the Hungarian algorithm scores 2.97 on the same scores" src="assets/card-foodbridge-light.svg?v=4" width="49%"></picture></a>
@@ -138,13 +138,14 @@ A memory and care companion for elders with dementia in North East India, built 
 </details>
 
 <details>
-<summary><b>Cricket Win-Probability Lakehouse</b> · 1.67M ball-by-ball rows</summary>
+<summary><b>Cricket Win-Probability Lakehouse</b> · 8,852 real matches, 2.03M balls</summary>
 <br>
 
-- 🏗️ A bronze/silver/gold Delta Lake lakehouse built from 7,000+ nested JSON files in 180 s
+- 🏗️ A bronze/silver/gold Delta Lake lakehouse over 8,852 real T20 matches (2005–2026), rebuilt end to end in 3 minutes
 - 🔁 Exactly-once streaming ingestion and revision-safe MERGE upserts, guarded by 19 data-quality checks
-- 🎯 A Spark MLlib win-probability model: 0.777 AUC and 1.8 pp calibration error on unseen seasons, scored live
+- 🎯 A Spark MLlib win-probability model: 0.845 AUC and 1.0 pp calibration error on unseen 2025–26 matches, scored live
 - 🎚️ A what-if demo in your browser: set overs left, wickets in hand and runs needed to see the real-data model's own prediction
+- 🔎 The demo exposed a feature collision; after the fix, chases exactly on the required rate are predicted to win 63% (they really win 64%), up from 53%
 
 `PySpark` `Delta Lake` `Structured Streaming` `Spark MLlib` `Airflow` · [**Repository →**](https://github.com/pajiala99/cricket-winprob-lakehouse) · [**Live demo →**](https://pajiala99.github.io/#demo-cricket)
 

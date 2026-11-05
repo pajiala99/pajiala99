@@ -164,7 +164,7 @@ A memory and care companion for elders with dementia in North East India, built 
 <br>
 
 - ✋ A BiLSTM with attention on MediaPipe keypoints that recognises 61 signs live and speaks them
-- 🧪 Went beyond a saturated benchmark: 94.5% top-1 from just 5 examples per word
+- 🧪 Went beyond a saturated benchmark: 95.6% top-1 from just 5 examples per word
 
 `PyTorch` `MediaPipe` `BiLSTM` · [**Repository →**](https://github.com/pajiala99/isl-recognition)
 

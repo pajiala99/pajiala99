@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-label="Hardik Pajiala: I build the whole system">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1020"/><stop offset="1" stop-color="#161d38"/></linearGradient>
+  <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1.5" cy="1.5" r="1.2" fill="#2a3356"/></pattern>
+</defs>
+<style>
+  .name{font:700 64px Georgia, 'Times New Roman', serif;fill:#ece8dd;animation:rise .9s ease-out both}
+  .tag{font:600 26px 'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;fill:#d4a94c;animation:rise .9s .2s ease-out both}
+  .pre{font:500 15px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;fill:#8f97ad;letter-spacing:.14em;animation:rise .9s .1s ease-out both}
+  .role{font:500 24px 'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;fill:#ece8dd;opacity:0}
+  .foot{font:500 14px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;fill:#8f97ad;letter-spacing:.06em;animation:rise .9s .4s ease-out both}
+  .wire{fill:none;stroke:#d4a94c;stroke-width:2;stroke-dasharray:6 7;opacity:.55;animation:flow 1.6s linear infinite}
+  .node circle{fill:#1b2445;stroke:#d4a94c;stroke-width:2}
+  .node text{font:600 12px 'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;fill:#ece8dd;text-anchor:middle}
+  .node{animation:pop .6s ease-out both}
+  .pulse{fill:#d4a94c}
+  .caret{fill:#d4a94c;animation:blink 1s steps(1) infinite}
+  .r0{animation:role 13.0s 0.0s infinite both}.r1{animation:role 13.0s 2.6s infinite both}.r2{animation:role 13.0s 5.2s infinite both}.r3{animation:role 13.0s 7.800000000000001s infinite both}.r4{animation:role 13.0s 10.4s infinite both}
+  @keyframes role{0%{opacity:0;transform:translateY(10px)}4%,16%{opacity:1;transform:none}20%,100%{opacity:0;transform:translateY(-10px)}}
+  @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+  @keyframes flow{to{stroke-dashoffset:-26}}
+  @keyframes blink{50%{opacity:0}}
+  .node{transform-box:fill-box;transform-origin:center}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}.r0{opacity:1}.pulse{display:none}}
+</style>
+<rect width="1200" height="300" rx="18" fill="url(#bg)"/>
+<rect width="1200" height="300" rx="18" fill="url(#grid)" opacity=".5"/>
+<text class="pre" x="64" y="70">COMPUTER ENGINEERING · THAPAR INSTITUTE · CLASS OF 2028</text>
+<text class="name" x="62" y="138">Hardik Pajiala</text>
+<text class="tag" x="64" y="182">I build the whole system:</text>
+<text class="role r0" x="64" y="228">Backend APIs</text><text class="role r1" x="64" y="228">Data pipelines</text><text class="role r2" x="64" y="228">Machine-learning models</text><text class="role r3" x="64" y="228">AI agents</text><text class="role r4" x="64" y="228">Apps people use</text>
+<rect class="caret" x="64" y="246" width="34" height="3" rx="1.5"/>
+<text class="foot" x="64" y="276">pajiala99.github.io</text>
+<path class="wire" d="M 760 210 L 870 120 L 990 190 L 1090 100 L 1150 220"/>
+<circle class="pulse" r="5"><animateMotion dur="5s" begin="0s" repeatCount="indefinite" path="M 760 210 L 870 120 L 990 190 L 1090 100 L 1150 220" /></circle><circle class="pulse" r="5"><animateMotion dur="5s" begin="1.7s" repeatCount="indefinite" path="M 760 210 L 870 120 L 990 190 L 1090 100 L 1150 220" /></circle><circle class="pulse" r="5"><animateMotion dur="5s" begin="3.4s" repeatCount="indefinite" path="M 760 210 L 870 120 L 990 190 L 1090 100 L 1150 220" /></circle>
+<g class="node" style="animation-delay:0.25s"><circle cx="760" cy="210" r="27" /><text x="760" y="214">API</text></g><g class="node" style="animation-delay:0.40s"><circle cx="870" cy="120" r="27" /><text x="870" y="124">Pipeline</text></g><g class="node" style="animation-delay:0.55s"><circle cx="990" cy="190" r="27" /><text x="990" y="194">Model</text></g><g class="node" style="animation-delay:0.70s"><circle cx="1090" cy="100" r="27" /><text x="1090" y="104">Agent</text></g><g class="node" style="animation-delay:0.85s"><circle cx="1150" cy="220" r="27" /><text x="1150" y="224">App</text></g>
+</svg>

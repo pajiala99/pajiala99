@@ -1,7 +1,7 @@
 <a href="https://pajiala99.github.io">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg?v=3">
-    <img alt="Hardik Pajiala: I build the whole system, from backend APIs and data pipelines to ML models, AI agents and apps" src="assets/header-light.svg?v=3" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg?v=4">
+    <img alt="Hardik Pajiala: I build the whole system, from backend APIs and data pipelines to ML models, AI agents and apps" src="assets/header-light.svg?v=4" width="100%">
   </picture>
 </a>
 
@@ -12,22 +12,90 @@
 </p>
 
 <p align="center">
-  <a href="#hackathons">🏆 Hackathons</a> ·
-  <a href="#projects">🛠️ Projects</a> ·
-  <a href="#tech">🧰 Tech</a> ·
-  <a href="#activity">📈 Activity</a> ·
-  <a href="https://pajiala99.github.io">💬 Ask the guide on my portfolio</a>
+  <a href="#whoami"><kbd>&nbsp;whoami&nbsp;</kbd></a>
+  <a href="#results"><kbd>&nbsp;Results&nbsp;</kbd></a>
+  <a href="#selected-builds"><kbd>&nbsp;Selected builds&nbsp;</kbd></a>
+  <a href="#how-an-sos-survives-no-signal"><kbd>&nbsp;SOS lifecycle&nbsp;</kbd></a>
+  <a href="#all-projects"><kbd>&nbsp;All projects&nbsp;</kbd></a>
+  <a href="#toolkit"><kbd>&nbsp;Toolkit&nbsp;</kbd></a>
 </p>
 
+## whoami
+
+| | |
+|---|---|
+| **Education** | B.E. Computer Engineering, Thapar Institute of Engineering & Technology, 2024–2028 |
+| **Based in** | Patiala, India |
+| **Works on** | Backend APIs · data pipelines on Spark and Delta Lake · ML models · AI agents with guardrails |
+| **Currently** | Open to software, data and ML internships |
+| **Reach me** | [Portfolio](https://pajiala99.github.io) · [LinkedIn](https://linkedin.com/in/hardik-pajiala) · [hardikpajiala@gmail.com](mailto:hardikpajiala@gmail.com) |
+
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg?v=3">
-  <img alt="At a glance: contributions in the last year, public projects, hackathons, and languages across my repos" src="assets/stats-light.svg?v=3" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/stats-dark.svg?v=4">
+  <img alt="At a glance: first place at BIOS 2026, three hackathons, public projects, and languages across my repos" src="assets/stats-light.svg?v=4" width="100%">
 </picture>
 
-## Hackathons
+## Results
 
-<details open>
-<summary><b>SafeTrail</b> · BIOS V2, problem statement winner 🏆 · <i>click to fold</i></summary>
+| Result | Event |
+|---|---|
+| 🏆 **First place** | **BIOS 2026 hackathon**, Thapar Institute · built [SafeTrail](https://github.com/pajiala99/BIOS-SafeTrail) in a team of two, as the top contributor · [certificate](assets/certificate-bios-2026.jpg) |
+| 🧩 **Team entry** | **Smart India Hackathon**, problem statement SIH26003 (Ministry of DoNER) · built [Smriti](https://github.com/urgirlgeet/Smriti), a memory and care companion for elders with dementia |
+| 🤖 **Agents track** | **Homingo Hackathon** · built [PRAMAAN](https://github.com/pajiala99/pramaan), an AI agent that investigates recruitment scams |
+
+<details>
+<summary>🎖️ <b>View the first-place certificate</b></summary>
+<br>
+<img src="assets/certificate-bios-2026.jpg" alt="First place certificate for the winning project at BIOS 2026, presented to Hardik Pajiala" width="640">
+</details>
+
+## Selected builds
+
+Each card replays the idea its project is built around. Click a card to open the repo.
+
+<p align="center">
+  <a href="https://github.com/pajiala99/BIOS-SafeTrail"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-safetrail-dark.svg?v=4"><img alt="SafeTrail: SOS calls are saved on the phone while there is no signal, then delivered to the responder when signal returns" src="assets/card-safetrail-light.svg?v=4" width="49%"></picture></a>
+  <a href="https://github.com/pajiala99/cricket-winprob-lakehouse"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-cricket-dark.svg?v=4"><img alt="Cricket lakehouse: rows flow from bronze to silver to gold, and a bad row is quarantined at the quality gate" src="assets/card-cricket-light.svg?v=4" width="49%"></picture></a>
+</p>
+<p align="center">
+  <a href="https://github.com/pajiala99/project_SE3"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-foodbridge-dark.svg?v=4"><img alt="FoodBridge: greedy matching scores 2.40 on a 4 by 4 example, and the Hungarian algorithm scores 2.97 on the same scores" src="assets/card-foodbridge-light.svg?v=4" width="49%"></picture></a>
+  <a href="https://github.com/pajiala99/academic-timetable-generator"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-timetable-dark.svg?v=4"><img alt="Timetable generator: classes are coloured like a graph, and each colour becomes a time slot with no clashes" src="assets/card-timetable-light.svg?v=4" width="49%"></picture></a>
+</p>
+
+## How an SOS survives no signal
+
+SafeTrail's SOS path, from the button to a resolved incident. Drag or zoom the diagram.
+
+```mermaid
+stateDiagram-v2
+    direction LR
+    state "Saved on phone" as Saved
+    state "Send by SMS offered" as Sms
+    state "Received by server" as Received
+    state "Incident open" as Open
+    state "Accepted" as Accepted
+    state "En route" as EnRoute
+    state "Resolved" as Resolved
+    state "Cancelled by tourist" as Cancelled
+    [*] --> Saved: hold SOS for 1.5 s
+    Saved --> Saved: no signal, retry with backoff
+    Saved --> Received: POST /sos, idempotent on client_id
+    Saved --> Sms: still unsent after 120 s
+    Sms --> Received: coded SMS
+    Received --> Open: rules set priority, DBSCAN groups nearby SOS
+    Open --> Accepted: responder accepts
+    Accepted --> EnRoute
+    EnRoute --> Resolved
+    Open --> Cancelled: second hold on Cancel
+    Resolved --> [*]
+```
+
+The server answers the moment an SOS arrives, and priority and grouping are plain rules. The AI writes the incident report afterwards, and nothing on this path waits for it.
+
+## All projects
+
+<details>
+<summary><b>SafeTrail</b> · 🏆 First place, BIOS 2026 · trail safety that works without signal</summary>
 <br>
 
 A trail-safety app for treks and pilgrimages. I was the top contributor in a team of two.
@@ -38,12 +106,12 @@ A trail-safety app for treks and pilgrimages. I was the top contributor in a tea
 - 🛡️ The AI is never in the emergency path. It only writes and translates text, under a per-job budget, with a standard fallback
 - 📊 Benchmarked four builds: 82% fewer AI tokens per trip than a naive build
 
-`FastAPI` `React` `TypeScript` `MapLibre` `Server-Sent Events` `pytest` · [**Repository →**](https://github.com/pajiala99/BIOS-SafeTrail)
+`FastAPI` `React` `TypeScript` `MapLibre` `Server-Sent Events` `pytest` · [**Repository →**](https://github.com/pajiala99/BIOS-SafeTrail) · [**Certificate →**](assets/certificate-bios-2026.jpg)
 
 </details>
 
 <details>
-<summary><b>Smriti</b> · Smart India Hackathon, SIH26003 · <i>click to expand</i></summary>
+<summary><b>Smriti</b> · Smart India Hackathon, SIH26003 · dementia care for North East India</summary>
 <br>
 
 A memory and care companion for elders with dementia in North East India, built by our team for the Ministry of DoNER problem statement.
@@ -58,10 +126,8 @@ A memory and care companion for elders with dementia in North East India, built 
 </details>
 
 <details>
-<summary><b>PRAMAAN</b> · Homingo Hackathon, Agents track · <i>click to expand</i></summary>
+<summary><b>PRAMAAN</b> · Homingo Hackathon, Agents track · an AI agent that checks job offers</summary>
 <br>
-
-An AI agent that investigates job offers for recruitment scams.
 
 - 🔎 Claude plans the investigation across 5 tools: red-flag rules, domain age, lookalike domains, careers pages and a web search for scam reports
 - ⚖️ The model never decides. Fixed rules over cited evidence give the verdict, and it never calls a scam on one source alone
@@ -71,10 +137,8 @@ An AI agent that investigates job offers for recruitment scams.
 
 </details>
 
-## Projects
-
 <details>
-<summary><b>Cricket Win-Probability Lakehouse</b> · 1.67M ball-by-ball rows · <i>click to expand</i></summary>
+<summary><b>Cricket Win-Probability Lakehouse</b> · 1.67M ball-by-ball rows</summary>
 <br>
 
 - 🏗️ A bronze/silver/gold Delta Lake lakehouse built from 7,000+ nested JSON files in 180 s
@@ -86,7 +150,7 @@ An AI agent that investigates job offers for recruitment scams.
 </details>
 
 <details>
-<summary><b>FoodBridge</b> · backend and matching engine · <i>click to expand</i></summary>
+<summary><b>FoodBridge</b> · backend and matching engine</summary>
 <br>
 
 - 🔌 26 REST endpoints over a 10-table PostgreSQL/PostGIS schema, with JWT auth and state machines
@@ -97,7 +161,7 @@ An AI agent that investigates job offers for recruitment scams.
 </details>
 
 <details>
-<summary><b>Indian Sign Language Recognition</b> · webcam signs to speech · <i>click to expand</i></summary>
+<summary><b>Indian Sign Language Recognition</b> · webcam signs to speech</summary>
 <br>
 
 - ✋ A BiLSTM with attention on MediaPipe keypoints that recognises 61 signs live and speaks them
@@ -108,7 +172,7 @@ An AI agent that investigates job offers for recruitment scams.
 </details>
 
 <details>
-<summary><b>Academic Timetable Generator</b> · graph colouring meets scheduling · <i>click to expand</i></summary>
+<summary><b>Academic Timetable Generator</b> · graph colouring meets scheduling</summary>
 <br>
 
 - 🧩 Clique and Hall's-theorem checks prove when no timetable can exist, before any search
@@ -118,7 +182,7 @@ An AI agent that investigates job offers for recruitment scams.
 
 </details>
 
-## Tech
+## Toolkit
 
 <p>
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python">
@@ -140,11 +204,4 @@ An AI agent that investigates job offers for recruitment scams.
   <img src="https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white" alt="GitHub Actions">
 </p>
 
-## Activity
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pajiala99/pajiala99/output/snake-dark.svg?v=3">
-  <img alt="A snake eating my GitHub contribution graph" src="https://raw.githubusercontent.com/pajiala99/pajiala99/output/snake-light.svg?v=3" width="100%">
-</picture>
-
-<sub>Batch Group Leader for a 300-student batch at Thapar · Saturnalia volunteer · off the keyboard: gym, running, music and anime. The images above refresh daily through a GitHub Action in this repo.</sub>
+<sub>The header, the stats card and the project cards are drawn by <a href="scripts/build_assets.py">scripts/build_assets.py</a>; a GitHub Action refreshes the stats daily. Off the keyboard: Batch Group Leader for a 300-student batch at Thapar, Saturnalia volunteer, gym, running, music and anime.</sub>

@@ -163,7 +163,7 @@ A memory and care companion for elders with dementia in North East India, built 
 </details>
 
 <details>
-<summary><b>Indian Sign Language Recognition</b> · webcam signs to speech</summary>
+<summary><b>Indian Sign Language Recognition</b> · webcam signs to speech · team of 3</summary>
 <br>
 
 - ✋ A BiLSTM with attention on MediaPipe keypoints that recognises 61 signs live and speaks them

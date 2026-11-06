@@ -40,7 +40,7 @@
 
 | Result | Event |
 |---|---|
-| 🏆 **First place** | **BIOS 2026 hackathon**, Thapar Institute · built [SafeTrail](https://github.com/pajiala99/BIOS-SafeTrail) in a team of two, as the top contributor · [certificate](assets/certificate-bios-2026.jpg) |
+| 🏆 **First place** | **BIOS 2026 hackathon**, Thapar Institute · built [SafeTrail](https://github.com/pajiala99/BIOS-SafeTrail) in a team of four with Aniket Raj, Khushi Dangi and Gaurvit Joshi, as the top contributor · [certificate](assets/certificate-bios-2026.jpg) |
 | 🧩 **Team entry** | **Smart India Hackathon**, problem statement SIH26003 (Ministry of DoNER) · built [Smriti](https://github.com/urgirlgeet/Smriti), a memory and care companion for elders with dementia |
 | 🤖 **Agents track** | **Homingo Hackathon** · built [PRAMAAN](https://github.com/pajiala99/pramaan), an AI agent that investigates recruitment scams |
 
@@ -98,7 +98,7 @@ The server answers the moment an SOS arrives, and priority and grouping are plai
 <summary><b>SafeTrail</b> · 🏆 First place, BIOS 2026 · trail safety that works without signal</summary>
 <br>
 
-A trail-safety app for treks and pilgrimages. I was the top contributor in a team of two.
+A trail-safety app for treks and pilgrimages. I was the top contributor in a team of four.
 
 - 📍 Geofenced danger zones: entering one sets off an alarm, a spoken warning and a red frame
 - 📶 An SOS that is saved on the phone and sent when signal returns, with SMS as a fallback

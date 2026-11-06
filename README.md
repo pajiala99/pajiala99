@@ -175,7 +175,7 @@ A memory and care companion for elders with dementia in North East India, built 
 </details>
 
 <details>
-<summary><b>Academic Timetable Generator</b> · graph colouring meets scheduling</summary>
+<summary><b>Academic Timetable Generator</b> · graph colouring meets scheduling · team of 3</summary>
 <br>
 
 - 🧩 Clique and Hall's-theorem checks prove when no timetable can exist, before any search

@@ -143,9 +143,9 @@ A memory and care companion for elders with dementia in North East India, built 
 
 - 🏗️ A bronze/silver/gold Delta Lake lakehouse over 8,852 real T20 matches (2005–2026), rebuilt end to end in 3 minutes
 - 🔁 Exactly-once streaming ingestion and revision-safe MERGE upserts, guarded by 19 data-quality checks
-- 🎯 A Spark MLlib win-probability model: 0.845 AUC and 1.0 pp calibration error on unseen 2025–26 matches, scored live
+- 🎯 A Spark MLlib win-probability model: 0.844 AUC and 1.3 pp calibration error on unseen 2025–26 matches, scored live
 - 🎚️ A what-if demo in your browser: set overs left, wickets in hand and runs needed to see the real-data model's own prediction
-- 🔎 The demo exposed a feature collision; after the fix, chases exactly on the required rate are predicted to win 63% (they really win 64%), up from 53%
+- 🔎 The demo exposed a feature collision; after the fix, chases exactly on the required rate are predicted to win 62% (they really win 64%), up from 53%
 
 `PySpark` `Delta Lake` `Structured Streaming` `Spark MLlib` `Airflow` · [**Repository →**](https://github.com/pajiala99/cricket-winprob-lakehouse) · [**Live demo →**](https://pajiala99.github.io/#demo-cricket)
 

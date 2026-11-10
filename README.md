@@ -163,14 +163,14 @@ A memory and care companion for elders with dementia in North East India, built 
 </details>
 
 <details>
-<summary><b>Indian Sign Language Recognition</b> · webcam signs to speech · team of 3</summary>
+<summary><b>Ishara</b> · Indian Sign Language recognition · webcam signs to speech · team of 3</summary>
 <br>
 
 - ✋ A BiLSTM with attention on MediaPipe keypoints that recognises 61 signs live and speaks them
 - 🧪 Went beyond a saturated benchmark: 95.6% top-1 from just 5 examples per word
 - ▶️ Runs in your browser too: exported to ONNX, it picks the same word as the Python pipeline on 181 of 182 held-out clips
 
-`PyTorch` `MediaPipe` `BiLSTM` `ONNX` · [**Repository →**](https://github.com/pajiala99/isl-recognition) · [**Live demo →**](https://pajiala99.github.io/#demo-isl)
+`PyTorch` `MediaPipe` `BiLSTM` `ONNX` · [**Repository →**](https://github.com/pajiala99/ishara) · [**Live demo →**](https://pajiala99.github.io/#demo-isl)
 
 </details>
 

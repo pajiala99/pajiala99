@@ -175,6 +175,21 @@ A memory and care companion for elders with dementia in North East India, built 
 </details>
 
 <details>
+<summary><b>Parchi</b> · serverless document pipeline on AWS · cloud computing course project · team of 3</summary>
+<br>
+
+Upload a fee receipt, medical bill or invoice; managed AWS services read it, check it, file it and email you. No server runs at any point.
+
+- ⚡ Event-driven: the browser uploads straight to S3, the S3 event queues in SQS, and a Lambda worker reads the bill with Textract
+- 🔁 Built to fail safely: idempotent processing, per-message retries, a dead-letter queue with alarms, daily cost caps
+- 🧾 Indian bills done right: lakh-grouped rupees, CGST + SGST, a GSTIN checksum and totals that must add up
+- 🏗️ The whole stack is code (AWS SAM); 118 tests, including an end-to-end run against an AWS emulator
+
+`AWS Lambda` `S3` `SQS` `DynamoDB` `Textract` `SNS` `AWS SAM` `React` · [**Repository →**](https://github.com/pajiala99/parchi)
+
+</details>
+
+<details>
 <summary><b>Academic Timetable Generator</b> · graph colouring meets scheduling · team of 3</summary>
 <br>
 

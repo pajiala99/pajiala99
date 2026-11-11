@@ -372,6 +372,49 @@ def body_timetable(t):
     return "".join(out)
 
 
+def body_parchi(t):
+    """A bill rides the event chain; a duplicate delivery is skipped; failures would wait in the DLQ."""
+    D = 9
+    hops = [("S3", "upload"), ("SQS", "queue"), ("Lambda", "worker"), ("Textract", "OCR"), ("DynamoDB", "filed"), ("SNS", "email")]
+    w, gap, y = 74, 20, 132
+    xs = [28 + i * (w + gap) for i in range(len(hops))]
+    reach = lambda i: .06 + .1 * i  # when the bill reaches hop i
+    out = []
+    for i, x in enumerate(xs[:-1]):
+        out.append(f'<line x1="{x + w}" y1="{y + 24}" x2="{xs[i + 1]}" y2="{y + 24}" stroke="{t["line"]}" stroke-width="2"/>')
+    for i, ((name, sub), x) in enumerate(zip(hops, xs)):
+        a = reach(i)
+        out.append(f'<rect x="{x}" y="{y}" width="{w}" height="48" rx="10" fill="{t["node"]}" stroke="{t["line"]}" stroke-width="1.5">'
+                   + anim("stroke", [t["line"], t["line"], t["accent"], t["accent"], t["line"], t["line"]], [0, a, a + .01, .92, .95, 1], D)
+                   + '</rect>'
+                   + f'<text class="chip" x="{x + w / 2:.0f}" y="{y + 21}" text-anchor="middle">{name}</text>'
+                   + f'<text class="small" x="{x + w / 2:.0f}" y="{y + 37}" text-anchor="middle">{sub}</text>')
+    # the dead-letter queue under SQS: where a bill would go after three failed tries
+    q = xs[1] + w / 2
+    out.append(f'<line x1="{q:.0f}" y1="{y + 48}" x2="{q:.0f}" y2="214" stroke="{t["bad"]}" stroke-width="1.5" stroke-dasharray="3 4"/>'
+               f'<rect x="{q - 50:.0f}" y="214" width="100" height="38" rx="8" fill="{t["bad"]}" fill-opacity=".08" stroke="{t["bad"]}" stroke-opacity=".6"/>'
+               f'<text class="chip" x="{q:.0f}" y="230" text-anchor="middle" style="fill:{t["bad"]}">DLQ</text>'
+               f'<text class="small" x="{q:.0f}" y="244" text-anchor="middle" style="fill:{t["bad"]}">after 3 tries</text>')
+    # the bill
+    x0 = xs[0] + w / 2 - 16
+    span = xs[-1] - xs[0]
+    out.append('<g opacity="0">' + anim("opacity", [0, 0, 1, 1, 0, 0], [0, .05, .06, .6, .63, 1], D)
+               + f'<animateMotion path="M0 0 L{span} 0" keyPoints="0;0;1;1" keyTimes="{kt(0, reach(0), reach(5), 1)}" calcMode="linear" dur="{D}s" repeatCount="indefinite"/>'
+               + f'<rect x="{x0:.0f}" y="96" width="32" height="20" rx="5" fill="{t["accent"]}"/>'
+               + f'<text class="chip" x="{x0 + 16:.0f}" y="110" text-anchor="middle" style="fill:{t["bg1"]}">bill</text></g>')
+    # SQS redelivers the same event: the worker's conditional write skips it
+    d0 = xs[1] + w / 2 - 16
+    out.append('<g opacity="0">' + anim("opacity", [0, 0, 1, 1, 0, 0], [0, .64, .65, .76, .79, 1], D)
+               + f'<animateMotion path="M0 0 L{xs[2] - xs[1]} 0" keyPoints="0;0;1;1" keyTimes="{kt(0, .65, .72, 1)}" calcMode="linear" dur="{D}s" repeatCount="indefinite"/>'
+               + f'<rect x="{d0:.0f}" y="96" width="32" height="20" rx="5" fill="{t["muted"]}"/>'
+               + f'<text class="chip" x="{d0 + 16:.0f}" y="110" text-anchor="middle" style="fill:{t["bg1"]}">dup</text></g>')
+    out.append(f'<text class="small" x="{xs[2] + w / 2 + 40:.0f}" y="230" text-anchor="middle" style="fill:{t["muted"]}" opacity="0">duplicate delivery → skipped'
+               + anim("opacity", [0, 0, 1, 1, 0, 0], [0, .72, .74, .9, .93, 1], D) + '</text>')
+    out.append(f'<text class="small" x="{xs[4] + w / 2 + 30:.0f}" y="230" text-anchor="middle" style="fill:{t["ok"]}" opacity="0">filed ✓  emailed to its owner'
+               + anim("opacity", [0, 0, 1, 1, 0, 0], [0, .58, .6, .9, .93, 1], D) + '</text>')
+    return "".join(out)
+
+
 def cards(t):
     food, g, h = body_foodbridge(t)
     return {
@@ -384,6 +427,9 @@ def cards(t):
         "foodbridge": card(t, "FoodBridge", "Why the matcher solves the whole board at once", food,
                            f"same 4×4 scores: greedy {g:.2f} → Hungarian {h:.2f} (+{(h / g - 1) * 100:.0f}%)",
                            tag="FastAPI · PostGIS"),
+        "parchi": card(t, "Parchi", "A bill read and filed on AWS, with no server running",
+                       body_parchi(t), "S3 events · SQS + DLQ · Lambda · Textract · 118 tests · infra as code",
+                       tag="AWS · serverless"),
         "timetable": card(t, "Timetable generator", "Classes are vertices, clashes are edges, slots are colours",
                           body_timetable(t), "example: 6 classes, 3 slots, 0 clashes · backtracking + annealing",
                           tag="Java · JavaFX"),

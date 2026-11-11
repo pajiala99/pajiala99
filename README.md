@@ -62,6 +62,9 @@ Each card replays the idea its project is built around. Click a card to open the
   <a href="https://github.com/pajiala99/project_SE3"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-foodbridge-dark.svg?v=4"><img alt="FoodBridge: greedy matching scores 2.40 on a 4 by 4 example, and the Hungarian algorithm scores 2.97 on the same scores" src="assets/card-foodbridge-light.svg?v=4" width="49%"></picture></a>
   <a href="https://github.com/pajiala99/academic-timetable-generator"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-timetable-dark.svg?v=4"><img alt="Timetable generator: classes are coloured like a graph, and each colour becomes a time slot with no clashes" src="assets/card-timetable-light.svg?v=4" width="49%"></picture></a>
 </p>
+<p align="center">
+  <a href="https://github.com/pajiala99/parchi"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-parchi-dark.svg?v=1"><img alt="Parchi: a bill travels from S3 through SQS, Lambda, Textract and DynamoDB to SNS; a duplicate delivery is skipped and failures would wait in a dead-letter queue" src="assets/card-parchi-light.svg?v=1" width="49%"></picture></a>
+</p>
 
 ## How an SOS survives no signal
 

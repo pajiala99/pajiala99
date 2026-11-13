@@ -6,9 +6,9 @@
 </a>
 
 <p align="center">
-  <a href="https://pajiala99.github.io"><img src="https://img.shields.io/badge/Portfolio-pajiala99.github.io-d4a94c?style=for-the-badge&logo=githubpages&logoColor=white" alt="Portfolio"></a>
-  <a href="https://linkedin.com/in/hardik-pajiala"><img src="https://img.shields.io/badge/LinkedIn-hardik--pajiala-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
-  <a href="mailto:hardikpajiala@gmail.com"><img src="https://img.shields.io/badge/Email-hardikpajiala%40gmail.com-555?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
+  <a href="https://pajiala99.github.io"><img src="assets/badge-portfolio.svg?v=1" alt="Portfolio: pajiala99.github.io"></a>
+  <a href="https://linkedin.com/in/hardik-pajiala"><img src="assets/badge-linkedin.svg?v=1" alt="LinkedIn: hardik-pajiala"></a>
+  <a href="mailto:hardikpajiala@gmail.com"><img src="assets/badge-email.svg?v=1" alt="Email: hardikpajiala@gmail.com"></a>
 </p>
 
 <p align="center">

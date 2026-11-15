@@ -121,10 +121,11 @@ Listens to both sides of a loan-recovery call and flags what the RBI's 2026 reco
 
 - Two Gnani Prisma v3.0 streams per call, one per side of the line; exact checks for calling hours, the recording notice and the dues, plus an LLM judge for threats, shaming and pressing during a bereavement
 - Timbre v3.0 whispers a correction to the agent, and every line and alert goes into a SHA-256 hash-chained evidence log
+- Plugs into a lender's dialer: a test-mode REST API, signed webhooks for every alert with a delivery log, review cases with an audit trail, and names masked before any text reaches the LLM
 - Measured, not just demoed: 180 noisy recordings streamed in real time. At 10 dB of noise it caught 31 of 31 planted breaches and judged 35 of 36 calls right; across seven more languages it caught 42 of 42 on a clean line
 - I built the live engine (streaming client, rules, LLM judge, nudges, evidence log); Khushi built the test bench, the dashboard and the public demo
 
-`Python` `FastAPI` `WebSockets` `Gnani Prisma v3.0` `Timbre v3.0` `LLM judge` · [**Repository →**](https://github.com/pajiala99/maryada) · [**Live demo →**](https://pajiala99.github.io/maryada/)
+`Python` `FastAPI` `WebSockets` `Webhooks` `Gnani Prisma v3.0` `Timbre v3.0` `LLM judge` · [**Repository →**](https://github.com/pajiala99/maryada) · [**Live demo →**](https://pajiala99.github.io/maryada/)
 
 </details>
 

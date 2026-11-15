@@ -27,7 +27,7 @@
 | **Education** | B.E. Computer Engineering, Thapar Institute of Engineering & Technology, 2024–2028 |
 | **Based in** | Patiala, India |
 | **Works on** | Backend APIs · data pipelines on Spark and Delta Lake · ML models · AI agents with guardrails |
-| **Try it live** | [Sign-language recognition](https://pajiala99.github.io/#demo-isl) and [cricket win probability](https://pajiala99.github.io/#demo-cricket): two of my models, running in your browser |
+| **Try it live** | [Sign-language recognition](https://pajiala99.github.io/#demo-isl), [cricket win probability](https://pajiala99.github.io/#demo-cricket) and an [RBI recovery-call monitor](https://pajiala99.github.io/maryada/): three of my projects, running in your browser |
 | **Currently** | Open to software, data and ML internships |
 | **Reach me** | [Portfolio](https://pajiala99.github.io) · [LinkedIn](https://linkedin.com/in/hardik-pajiala) · [hardikpajiala@gmail.com](mailto:hardikpajiala@gmail.com) |
 
@@ -110,6 +110,21 @@ A trail-safety app for treks and pilgrimages. I was the top contributor in a tea
 - 📊 Benchmarked four builds: 82% fewer AI tokens per trip than a naive build
 
 `FastAPI` `React` `TypeScript` `MapLibre` `Server-Sent Events` `pytest` · [**Repository →**](https://github.com/pajiala99/BIOS-SafeTrail) · [**Certificate →**](assets/certificate-bios-2026.jpg)
+
+</details>
+
+<details>
+<summary><b>Maryada</b> · live RBI compliance monitor for loan-recovery calls · Gnani.ai Great Indian AI Internship challenge · with Khushi Dangi</summary>
+<br>
+
+Listens to both sides of a loan-recovery call and flags what the RBI's 2026 recovery-conduct directions forbid while the call is still going, in nine Indian languages, on noisy phone lines.
+
+- Two Gnani Prisma v3.0 streams per call, one per side of the line; exact checks for calling hours, the recording notice and the dues, plus an LLM judge for threats, shaming and pressing during a bereavement
+- Timbre v3.0 whispers a correction to the agent, and every line and alert goes into a SHA-256 hash-chained evidence log
+- Measured, not just demoed: 180 noisy recordings streamed in real time. At 10 dB of noise it caught 31 of 31 planted breaches and judged 35 of 36 calls right; across seven more languages it caught 42 of 42 on a clean line
+- I built the live engine (streaming client, rules, LLM judge, nudges, evidence log); Khushi built the test bench, the dashboard and the public demo
+
+`Python` `FastAPI` `WebSockets` `Gnani Prisma v3.0` `Timbre v3.0` `LLM judge` · [**Repository →**](https://github.com/pajiala99/maryada) · [**Live demo →**](https://pajiala99.github.io/maryada/)
 
 </details>
 

@@ -415,6 +415,46 @@ def body_parchi(t):
     return "".join(out)
 
 
+def body_maryada(t):
+    """Both sides of a call fill in as it plays; agent lines that break a rule turn red and the rule flips to broken."""
+    D = 10
+    X0, X1 = 112, 404
+    at = lambda x: .8 * (x - X0) / (X1 - X0)  # when the sweeping cursor reaches x
+    out = []
+    for name, y in (("agent", 140), ("borrower", 196)):
+        out.append(f'<text class="lane" x="28" y="{y + 4}">{name}</text>'
+                   f'<line x1="{X0}" y1="{y}" x2="{X1}" y2="{y}" stroke="{t["line"]}"/>')
+    # utterances: (lane y, x start, x end, what the agent got wrong)
+    bars = [(140, 116, 150, ""), (140, 156, 196, ""), (196, 204, 236, ""), (140, 244, 290, "₹4,400 ≠ ₹2,950"),
+            (196, 296, 330, ""), (140, 336, 398, "threat · para 100X")]
+    below = {"threat · para 100X"}  # this label goes under its bar so it never meets the dues label
+    for y, a, b, bad in bars:
+        s = at(a)
+        color = t["bad"] if bad else (t["s2"] if y == 140 else t["muted"])
+        out.append(f'<rect x="{a}" y="{y - 7}" width="{b - a}" height="14" rx="7" fill="{color}" fill-opacity=".85" opacity="0">'
+                   + anim("opacity", [0, 0, 1, 1, 0, 0], [0, s, s + .02, .94, .97, 1], D) + '</rect>')
+        if bad:
+            out.append(f'<text class="small" x="{b if bad in below else round((a + b) / 2)}" y="{y + 25 if bad in below else y - 14}" text-anchor="{'end' if bad in below else 'middle'}" style="fill:{t["bad"]}" opacity="0">{escape(bad)}'
+                       + anim("opacity", [0, 0, 1, 1, 0, 0], [0, s + .02, s + .04, .94, .97, 1], D) + '</text>')
+    out.append(f'<line x1="{X0}" y1="108" x2="{X0}" y2="214" stroke="{t["accent"]}" stroke-width="1.5" opacity=".55">'
+               + anim("x1", [X0, X1, X1, X0], [0, .8, .97, 1], D) + anim("x2", [X0, X1, X1, X0], [0, .8, .97, 1], D) + '</line>')
+    # the whisper back to the agent, after the wrong amount
+    w = at(290) + .03
+    out.append(f'<text class="small" x="{X0}" y="246" style="fill:{t["accent"]}" opacity="0">Timbre whispers: owed is ₹2,950'
+               + anim("opacity", [0, 0, 1, 1, 0, 0], [0, w, w + .02, .94, .97, 1], D) + '</text>')
+    # the rules panel
+    rules = [("calling hours", at(116) + .01), ("wrong dues", at(290)), ("recording notice", at(336)), ("threat or abuse", at(398))]
+    out.append('<text class="small" x="430" y="104">rules</text>')
+    for k, (name, when) in enumerate(rules):
+        y = 116 + 36 * k
+        out.append(f'<rect x="430" y="{y}" width="142" height="28" rx="7" fill="{t["node"]}" stroke="{t["line"]}">'
+                   + anim("stroke", [t["line"], t["line"], t["bad"], t["bad"], t["line"], t["line"]], [0, when, when + .01, .94, .97, 1], D) + '</rect>'
+                   + f'<text class="small" x="438" y="{y + 18}" style="fill:{t["text"]}">{name}</text>'
+                   + f'<circle cx="560" cy="{y + 14}" r="5" fill="{t["muted"]}">'
+                   + anim("fill", [t["muted"], t["muted"], t["bad"], t["bad"], t["muted"], t["muted"]], [0, when, when + .01, .94, .97, 1], D) + '</circle>')
+    return "".join(out)
+
+
 def cards(t):
     food, g, h = body_foodbridge(t)
     return {
@@ -430,6 +470,9 @@ def cards(t):
         "parchi": card(t, "Parchi", "A bill read and filed on AWS, with no server running",
                        body_parchi(t), "S3 events · SQS + DLQ · Lambda · Textract · 118 tests · infra as code",
                        tag="AWS · serverless"),
+        "maryada": card(t, "Maryada", "Every recovery call checked against the RBI's rules, live",
+                        body_maryada(t), "two Prisma v3.0 streams · 31/31 breaches at 10 dB noise · 9 languages",
+                        tag="Gnani Prisma · Timbre"),
         "timetable": card(t, "Timetable generator", "Classes are vertices, clashes are edges, slots are colours",
                           body_timetable(t), "example: 6 classes, 3 slots, 0 clashes · backtracking + annealing",
                           tag="Java · JavaFX"),

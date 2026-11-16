@@ -64,6 +64,7 @@ Each card replays the idea its project is built around. Click a card to open the
 </p>
 <p align="center">
   <a href="https://github.com/pajiala99/parchi"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-parchi-dark.svg?v=1"><img alt="Parchi: a bill travels from S3 through SQS, Lambda, Textract and DynamoDB to SNS; a duplicate delivery is skipped and failures would wait in a dead-letter queue" src="assets/card-parchi-light.svg?v=1" width="49%"></picture></a>
+  <a href="https://github.com/pajiala99/maryada"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-maryada-dark.svg?v=1"><img alt="Maryada: the agent's and the borrower's lines fill in as a call plays; a wrong amount and a threat turn red, and four RBI rules flip to broken while Timbre whispers the right amount to the agent" src="assets/card-maryada-light.svg?v=1" width="49%"></picture></a>
 </p>
 
 ## How an SOS survives no signal
@@ -114,18 +115,19 @@ A trail-safety app for treks and pilgrimages. I was the top contributor in a tea
 </details>
 
 <details>
-<summary><b>Maryada</b> · live RBI compliance monitor for loan-recovery calls · Gnani.ai Great Indian AI Internship challenge · with Khushi Dangi</summary>
+<summary><b>Maryada</b> · when a borrower complains, the lender already has the proof · Gnani.ai Great Indian AI Internship Challenge · with Khushi Dangi</summary>
 <br>
 
-Listens to both sides of a loan-recovery call and flags what the RBI's 2026 recovery-conduct directions forbid while the call is still going, in nine Indian languages, on noisy phone lines.
+Checks every loan-recovery call against the RBI's recovery-conduct directions (in force from 1 January 2027) while the call is still going, in nine Indian languages, on noisy phone lines. When a complaint comes in, the call is already matched and the breach is marked with its clause and the agent's exact words.
 
 - Two Gnani Prisma v3.0 streams per call, one per side of the line; exact checks for calling hours, the recording notice and the dues, plus an LLM judge for threats, shaming and pressing during a bereavement
 - Timbre v3.0 whispers a correction to the agent, and every line and alert goes into a SHA-256 hash-chained evidence log
-- Plugs into a lender's dialer: a test-mode REST API, signed webhooks for every alert with a delivery log, review cases with an audit trail, and names masked before any text reaches the LLM
+- A complaint workflow for the compliance team: matched call, confirm the moment, sealed evidence pack, and an action recorded on the agent
+- Plugs into a lender's dialer through our own platform layer: a versioned REST API, signed webhooks (HMAC-SHA256) with retries and a delivery log, per-lender policies, and names masked before any text reaches the LLM
 - Measured, not just demoed: 180 noisy recordings streamed in real time. At 10 dB of noise it caught 31 of 31 planted breaches and judged 35 of 36 calls right; across seven more languages it caught 42 of 42 on a clean line
 - I built the live engine (streaming client, rules, LLM judge, nudges, evidence log); Khushi built the test bench, the dashboard and the public demo
 
-`Python` `FastAPI` `WebSockets` `Webhooks` `Gnani Prisma v3.0` `Timbre v3.0` `LLM judge` · [**Repository →**](https://github.com/pajiala99/maryada) · [**Live demo →**](https://pajiala99.github.io/maryada/)
+`Python` `FastAPI` `WebSockets` `REST API` `Webhooks` `Gnani Prisma v3.0` `Timbre v3.0` `LLM judge` · [**Repository →**](https://github.com/pajiala99/maryada) · [**Live demo →**](https://pajiala99.github.io/maryada/) · [**One-page brief →**](https://github.com/pajiala99/maryada/blob/main/PITCH.pdf)
 
 </details>
 

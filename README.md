@@ -60,7 +60,7 @@ Each card replays the idea its project is built around. Click a card to open the
 </p>
 <p align="center">
   <a href="https://github.com/pajiala99/project_SE3"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-foodbridge-dark.svg?v=4"><img alt="FoodBridge: greedy matching scores 2.40 on a 4 by 4 example, and the Hungarian algorithm scores 2.97 on the same scores" src="assets/card-foodbridge-light.svg?v=4" width="49%"></picture></a>
-  <a href="https://github.com/pajiala99/academic-timetable-generator"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-timetable-dark.svg?v=4"><img alt="Timetable generator: classes are coloured like a graph, and each colour becomes a time slot with no clashes" src="assets/card-timetable-light.svg?v=4" width="49%"></picture></a>
+  <a href="https://github.com/pajiala99/academic-timetable-generator"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-timetable-dark.svg?v=4"><img alt="SlotWise, a timetable generator: classes are coloured like a graph, and each colour becomes a time slot with no clashes" src="assets/card-timetable-light.svg?v=4" width="49%"></picture></a>
 </p>
 <p align="center">
   <a href="https://github.com/pajiala99/parchi"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-parchi-dark.svg?v=1"><img alt="Parchi: a bill travels from S3 through SQS, Lambda, Textract and DynamoDB to SNS; a duplicate delivery is skipped and failures would wait in a dead-letter queue" src="assets/card-parchi-light.svg?v=1" width="49%"></picture></a>
@@ -211,13 +211,13 @@ Upload a fee receipt, medical bill or invoice; managed AWS services read it, che
 </details>
 
 <details>
-<summary><b>Academic Timetable Generator</b> · graph colouring meets scheduling · team of 3</summary>
+<summary><b>SlotWise</b> · academic timetable generator · graph colouring meets scheduling · team of 3</summary>
 <br>
 
 - 🧩 Clique and Hall's-theorem checks prove when no timetable can exist, before any search
 - 🔍 Backtracking meets every hard constraint, then simulated annealing improves the soft ones
 
-`Java` `JavaFX` `MySQL` · [**Repository →**](https://github.com/pajiala99/academic-timetable-generator)
+`Java` `JavaFX` `MySQL` · desktop app and browser version · [**Repository →**](https://github.com/pajiala99/academic-timetable-generator)
 
 </details>
 

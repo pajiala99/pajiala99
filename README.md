@@ -217,7 +217,7 @@ Upload a fee receipt, medical bill or invoice; managed AWS services read it, che
 - 🧩 Clique and Hall's-theorem checks prove when no timetable can exist, before any search
 - 🔍 Backtracking meets every hard constraint, then simulated annealing improves the soft ones
 
-`Java` `JavaFX` `MySQL` · desktop app and browser version · [**Repository →**](https://github.com/pajiala99/academic-timetable-generator)
+`Java` `JavaFX` `MySQL` · desktop app and browser version · [**Repository →**](https://github.com/pajiala99/academic-timetable-generator) · [**Download →**](https://github.com/pajiala99/academic-timetable-generator/releases/latest)
 
 </details>
 
